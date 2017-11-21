@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css tricks</title>
+</head>
+<style>
+  html, *{
+    padding: 0;
+    margin: 0;
+  }
+  section {
+    margin-bottom: 20px;
+  }
+  /* @float 三列布局 */
+  .left-center-right.float>article {
+    width: 100%;
+  }
+  .left-center-right.float article > div {
+    height: 100px;
+  }
+  .left-center-right.float .left {
+    width: 300px;
+    background: pink;
+    float: left;
+  }
+  .left-center-right.float .center {
+    background: yellow;
+  }
+  .left-center-right.float .right {
+    width: 300px;
+    background: pink;
+    float: right;
+  }
+  /*@float 两列布局 */
+  .left-right.float {
+    width: 100%;
+  }
+  .left-right.float > article > div {
+    height: 100px;
+  }
+  .left-right.float .left {
+    width: 300px;
+    float: left;
+    background: mediumpurple;
+  }
+  .left-right.float .right {
+    background: pink
+  }
+  /* @absolute 三列布局 */
+  .left-center-right.absolute {
+    width: 100%;
+  }
+  .left-center-right.absolute > article > div {
+    height: 100px
+  }
+  .left-center-right.absolute .left {
+    position: absolute;
+    width: 300px;
+    left: 0;
+    background: pink;
+  }
+  .left-center-right.absolute .right {
+    position: absolute;
+    width: 300px;
+    right: 0;
+    background: pink;
+  }
+  .left-center-right.absolute .center {
+    background: yellow;
+    margin: 0 300px;
+  }
+  /*@absolute 两列布局 */
+  .left-right.absolute {
+    width: 100%;
+    position: relative;
+  }
+  .left-right.absolute > article > div {
+    height: 100px;
+  }
+  .left-right.absolute .left {
+    position: absolute;
+    width: 300px;
+    left: 0;
+    background: mediumpurple;
+  }
+  .left-right.absolute .right {
+    margin: 0 0 0 300px;
+    background: pink;
+  }
+</style>
+
+<body>
+  <!-- 浮动布局-中间自适应，两边固定 -->
+  <section class="left-center-right float">
+    <article>
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="center">
+          @float——这是三列布局， 两边宽度固定， 中间自适应
+      </div>
+    </article>
+  </section>
+  <!-- 浮动布局-左边固定，右边自适应 -->
+  <section class="left-right float">
+    <article>
+      <div class="left">@float——两列布局，左边宽度固定，右边自适应</div>
+      <div class="right"></div>
+    </article>
+  </section>
+
+  <!-- 绝对定位布局-中间自适应，两边固定 -->
+  <section class="left-center-right absolute">
+    <article>
+      <div class="left"></div>
+      <div class="right"></div>
+      <div class="center">
+        @absolute——三列布局， 两边宽度固定， 中间自适应
+      </div>
+    </article>
+  </section>
+  <!-- 绝对定位布局-左边固定，右边自适应 -->
+  <section class="left-right absolute">
+    <article>
+      <div class="left">@absolute——两列布局，左边宽度固定，右边自适应</div>
+      <div class="right">@absolute——两列布局，左边宽度固定</div>
+    </article>
+  </section>
+  <style>
+    .left-center-right.table {
+      width: 100%;
+    }
+    .left-center-right.table > article {
+      display: table;
+      width: 100%;
+    }
+    .left-center-right.table > article > div {
+      display: table-cell;
+      height: 100px
+    }
+    .left-center-right .left {
+      width: 300px;
+      background: pink;
+    }
+    .left-center-right .right {
+      width: 300px;
+      background: pink;
+    }
+    .left-center-right .center {
+      background: yellow;
+    }
+
+    .left-right.table > article {
+      display: table;
+      width: 100%;
+    }
+    .left-right.table > article > div {
+      display: table-cell;
+      height: 100px;
+    }
+    .left-right.table .left {
+      width: 300px;
+      background: mediumpurple;
+    }
+    .left-right.table .right {
+      background: pink;
+    }
+  </style>
+  <!-- 表格布局-中间自适应，两边固定 -->
+  <section class="left-center-right table">
+    <article>
+      <div class="left"></div>
+      <div class="center">
+          @table——这是三列布局， 两边宽度固定， 中间自适应
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+  <!-- 表格布局-左边固定，右边自适应 -->
+  <section class="left-right table">
+    <article>
+      <div class="left">@table——两列布局，左边宽度固定，右边自适应</div>
+      <div class="right"></div>
+    </article>
+  </section>
+
+  <style>
+    .left-center-right.flex {
+      width: 100%;
+    }
+    .left-center-right.flex > article {
+      display: flex;
+      height: 100px;
+    }
+    .left-center-right.flex .left {
+      width: 300px;
+      background: pink;
+    }
+    .left-center-right.flex .right {
+      width: 300px;
+      background: pink;
+    }
+    .left-center-right.flex .center {
+      flex: 1;
+      background: yellow;
+    }
+    .left-right.flex {
+      width: 100%;
+    }
+    .left-right.flex > article {
+      width: 100%;
+      height: 100px;
+      display: flex;
+    }
+    .left-right.flex .left {
+      width: 300px;
+      background: mediumpurple;
+    }
+    .left-right.flex .right {
+      flex: 1;
+      background: pink;
+    }
+  </style>
+  <!-- css3-flex布局-中间自适应，两边固定 -->
+  <section class="left-center-right flex">
+    <article>
+      <div class="left"></div>
+      <div class="center">
+          @flex——这是三列布局， 两边宽度固定， 中间自适应
+      </div>
+      <div class="right"></div>
+    </article>
+  </section>
+  <!-- css3-flex布局-左边固定，右边自适应 -->
+  <section class="left-right flex">
+    <article>
+      <div class="left">@flex——两列布局，左边宽度固定，右边自适应</div>
+      <div class="right"></div>
+    </article>
+  </section>
+
+  <style>
+    .left-center-right.grid {
+      width: 100%;
+    }
+    .left-center-right.grid > article {
+      display: grid;
+      grid-template-rows: 100px;
+      grid-template-columns: 300px auto 300px;
+    }
+    .left-right.grid {
+      width: 100%;
+    }
+    .left-right.grid > article {
+      display: grid;
+      grid-template-rows: 100px;
+      grid-template-columns: 300px auto;
+    }
+    .left-right.grid .left {
+      background: mediumpurple;
+    }
+    .left-right.grid .right {
+      background: pink;
+    }
+  </style>
+  <!-- 网格布局-中间自适应，两边固定 -->
+  <section class="left-center-right grid">
+      <article>
+        <div class="left"></div>
+        <div class="center">
+            @grid——这是三列布局， 两边宽度固定， 中间自适应
+        </div>
+        <div class="right"></div>
+      </article>
+    </section>
+    <!-- 网格布局-左边固定，右边自适应 -->
+    <section class="left-right grid">
+      <article>
+        <div class="left">@grid——两列布局，左边宽度固定，右边自适应</div>
+        <div class="right"></div>
+      </article>
+    </section>
+</body>
+</html>
