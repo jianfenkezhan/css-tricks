@@ -70,7 +70,13 @@
   }
   .left-center-right.absolute .center {
     background: yellow;
-    margin: 0 300px;
+    margin: 0 300px; /* 方式一 */
+    /** 方式一 **/
+    /* 
+    left: 300px;
+    right: 300px;
+    position: absolute; 
+    */
   }
   /*@absolute 两列布局 */
   .left-right.absolute {
@@ -281,6 +287,19 @@
         <div class="left">@grid——两列布局，左边宽度固定，右边自适应</div>
         <div class="right"></div>
       </article>
+    </section>
+    <section class="triangle-sec">
+        <style>
+          #triangle {
+            width: 0;
+            height: 0;
+            border-width: 20px;
+            border-style: solid;
+            border-color: transparent transparent red transparent;
+            /* border-color: pink magenta red mediumaquamarine; */
+          }
+        </style>
+        <div id="triangle"></div>
     </section>
 </body>
 </html>
